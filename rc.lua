@@ -293,8 +293,6 @@ clientkeys = awful.util.table.join(
         end)
 )
 
--- keybinding({ modkey }, "p", function () awful.util.spawn("`dmenu_path | dmenu -b`") end):add()
-
 -- Compute the maximum number of digit we need, limited to 9
 keynumber = 0
 for s = 1, screen.count() do
