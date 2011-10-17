@@ -65,7 +65,7 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "Debian", debian.menu.Debian_menu.Debian },
-                                    { "open finder", "gnome-open ~/" },
+                                    { "open finder", "xdg-open"},
                                     { "open terminal", terminal }
                                   }
                         })
@@ -262,6 +262,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
+
+    awful.key({modkey }, "s", function() awful.util.spawn( "dmenu_run" ) end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
@@ -289,6 +292,8 @@ clientkeys = awful.util.table.join(
             c.maximized_vertical   = not c.maximized_vertical
         end)
 )
+
+-- keybinding({ modkey }, "p", function () awful.util.spawn("`dmenu_path | dmenu -b`") end):add()
 
 -- Compute the maximum number of digit we need, limited to 9
 keynumber = 0
