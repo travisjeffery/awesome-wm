@@ -196,7 +196,6 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     layout = awful.widget.layout.horizontal.leftright
                                   },
                                   mylayoutbox[s],
-                                  mytextclock,
                                   separator,
                                   volume_widget,
                                   separator,
